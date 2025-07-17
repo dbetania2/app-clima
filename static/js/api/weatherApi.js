@@ -1,5 +1,5 @@
 // la url base para la api.
-
+import { handleApiError, handleRequestError } from "../utilsjs/errorHandler.js";
 const api_base_url = 'http://127.0.0.1:5000';//se ajusta en prod
 
 /**
@@ -12,22 +12,20 @@ const api_base_url = 'http://127.0.0.1:5000';//se ajusta en prod
  * @throws {error} - lanza un error si la solicitud a la api falla o si la respuesta
  * del servidor no es exitosa (status http no 'ok').
  */
-export async function fetchWeather(ciudad){
-  // construye la url completa para la solicitud, incluyendo la ciudad codificada para la url.
-  // 'encodeuricomponent' asegura que caracteres especiales en el nombre de la ciudad
-  // sean correctamente manejados en la url.
-  const res = await fetch(`${api_base_url}/weather?city=${encodeURIComponent(ciudad)}`);
-  
-  // parsea la respuesta de la api como json.
-  const json = await res.json();
-  
-  // si 'res.ok' es falso, significa que hubo un error en la peticion 
-  if (!res.ok) {
-    // lanza un error con el mensaje proporcionado por la api (si existe) o un mensaje generico.
-    throw new Error(json.error || 'error desconocido al obtener datos del clima');
-  }
-
-  // si la respuesta fue exitosa, devuelve los datos json obtenidos.
-  // estos datos contendran la informacion del clima solicitada.
-  return json; 
+export async function fetchWeather(ciudad) {
+    try {
+        // construir url completa para la solicitud
+        // 'encodeuricomponent' asegura manejo correcto de caracteres especiales en url
+        const res = await fetch(`${api_base_url}/weather?city=${encodeURIComponent(ciudad)}`);
+        
+        // manejar respuesta de api, lanzara error si no es ok
+        const json = await handleApiError(res, 'error desconocido al obtener datos del clima');
+        
+        // devolver datos json si la respuesta fue exitosa
+        return json;
+    } catch (err) {
+        // manejar errores de solicitud de red
+        handleRequestError(err, 'error al obtener datos del clima');
+        // el error es relanzado por handleRequestError, asi que esta funcion no devuelve nada aqui
+    }
 }
