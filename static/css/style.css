@@ -1,0 +1,291 @@
+/* =========================================================
+   VARIABLES + TEMAS
+   ========================================================= */
+   /* Regla para eliminar el contorno de enfoque en las capas interactivas de Leaflet */
+.leaflet-interactive:focus {
+    outline: none !important;
+}
+
+:root {
+  /* Colores tema claro (default) */
+  --bg-color:            #f0f2f5;
+  --text-color:          #333;
+  --panel-bg:            #ffffff;
+  --panel-shadow:        0 4px 8px rgba(0,0,0,.1);
+
+  --button-bg:           #007bff;
+  --button-bg-hover:     #0056b3;
+  --button-text:         #ffffff;
+
+  --forecast-card-bg:    #e9ecef;
+  --chart-title-color:   #444;
+
+  --toggle-color:        #333;
+  --error-color:         red;
+}
+
+.dark {
+  /* Colores tema oscuro   */
+  --bg-color:            #121212;
+  --text-color:          #e0e0e0;
+  --panel-bg:            #1e1e1e;
+  --panel-shadow:        0 4px 8px rgba(0,0,0,.4);
+
+  --button-bg:           #3399ff;
+  --button-bg-hover:     #66aaff;
+  --button-text:         #ffffff;
+
+  --forecast-card-bg:    #2a2a2a;
+  --chart-title-color:   #ddd;
+
+  --toggle-color:        #f0f0f0;
+  --error-color:         #ff6868;
+}
+
+/* Transición suave cuando se cambia de tema */
+body {
+  transition: background-color .3s, color .3s;
+}
+
+/* =========================================================
+   ESTRUCTURA GENERAL
+   ========================================================= */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.app {
+  /* Modificado: Usamos Flexbox para una distribución dinámica */
+  display: flex;
+  flex-direction: row; /* Paneles en fila */
+  flex-wrap: nowrap;   /* Evita que los paneles se envuelvan */
+  align-items: stretch; /* Asegura que los paneles tengan la misma altura */
+  justify-content: center; /* Centra los paneles horizontalmente */
+  
+  gap: 20px; /* Espacio entre los paneles */
+  height: 100vh;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PANEL IZQUIERDO Y DERECHO + MAPA
+   ========================================================= */
+.panel {
+  background: var(--panel-bg);
+  border-radius: 10px;
+  box-shadow: var(--panel-shadow);
+  padding: 30px;
+  overflow-y: auto; /* Permite desplazamiento vertical si el contenido es largo */
+
+  /* Agregado: Propiedades Flexbox para que los paneles se distribuyan */
+  flex-grow: 1;   /* Permite que el panel crezca para ocupar el espacio disponible */
+  flex-shrink: 1; /* Permite que el panel se encoja si es necesario */
+  flex-basis: 0;  /* Base flexible, el tamaño se ajusta por grow/shrink */
+  min-width: 0;   /* Evita que el contenido desborde el panel al encogerse */
+}
+
+/* El map-box ahora también se comporta como un elemento flex */
+.map-box {
+  /* Eliminado: grid-column: 1 / 2; */ /* Esto ya no es necesario con Flexbox */
+  height: 100%;
+  width: 100%; /* Esto permitirá que flex-basis lo controle mejor */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--panel-bg);
+
+  /* Agregado: Propiedades Flexbox para el mapa */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 35%; /* Ancho base para el mapa, los otros paneles se ajustarán */
+  min-width: 0;
+}
+
+.left {
+  /* Eliminado: grid-column: 2 / 3; */ /* Esto ya no es necesario con Flexbox */
+  position: relative; /* Mantener para el botón de modo oscuro */
+  flex-basis: 25%; /* Ancho base para el panel izquierdo */
+}
+
+.right {
+  /* Eliminado: grid-column: 3 / 4; */ /* Esto ya no es necesario con Flexbox */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-basis: 40%; /* Ancho base para el panel derecho (dashboard) */
+}
+
+
+/* =========================================================
+   ENCABEZADOS
+   ========================================================= */
+h1, h2, h3 {
+  color: var(--text-color);
+}
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: var(--panel-bg);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color .3s;
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+}
+
+/* Modificado: Asegura que la clase 'hidden' realmente oculte el elemento y su espacio */
+.hidden { display: none !important; }
+
+#errorMessage {
+  color: var(--error-color);
+  margin-top: 20px;
+  text-align: center;
+  /* Agregado: Asegura que el texto del error se ajuste dentro del contenedor */
+  word-wrap: break-word; /* Para navegadores antiguos */
+  overflow-wrap: break-word; /* La propiedad moderna y recomendada */
+}
+
+/* =========================================================
+   CLIMA ACTUAL
+   ========================================================= */
+.current-weather {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.current-weather img {
+  width: 80px;
+  height: 80px;
+}
+
+/* =========================================================
+   PRONÓSTICO SEMANAL
+   ========================================================= */
+.weekly-forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.day-forecast {
+  background: var(--forecast-card-bg);
+  padding: 10px;
+  border-radius: 8px;
+  width: 120px;
+  text-align: center;
+  font-size: .9em;
+}
+
+.day-forecast img {
+  width: 50px;
+  height: 50px;
+}
+
+/* =========================================================
+   GRÁFICOS
+   ========================================================= */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  margin-bottom: 30px;
+}
+
+.chart-container h3 {
+  margin-bottom: 10px;
+  color: var(--chart-title-color);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* =========================================================
+   BOTÓN MODO OSCURO / CLARO
+   ========================================================= */
+.mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--toggle-color);
+  transition: transform .2s;
+  filter: grayscale(100%); /* Hace el emoji en escala de grises */
+
+}
+
+.mode-toggle:hover { transform: scale(1.2); }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .app {
+    /* Mantenemos Grid para el layout responsivo de apilar */
+    display: grid; 
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto; /* Auto para que las filas se ajusten al contenido */
+    flex-direction: column; /* Anula flex-direction de la versión desktop */
+    justify-content: unset; /* Anula justify-content de la versión desktop */
+    align-items: unset;   /* Anula align-items de la versión desktop */
+  }
+
+  .map-box {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    height: 300px;
+    /* Anulamos las propiedades flex que interfieren con grid */
+    flex-basis: auto; 
+    flex-grow: unset;
+    flex-shrink: unset;
+  }
+
+  .panel.left {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    /* Anulamos las propiedades flex que interfieren con grid */
+    flex-basis: auto;
+    flex-grow: unset;
+    flex-shrink: unset;
+  }
+
+  .panel.right {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    /* Anulamos las propiedades flex que interfieren con grid */
+    flex-basis: auto;
+    flex-grow: unset;
+    flex-shrink: unset;
+  }
+}

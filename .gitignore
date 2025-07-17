@@ -1,0 +1,25 @@
+# Entornos virtuales
+venv/
+.env
+
+# Archivos del sistema
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos temporales
+*.log
+.DS_Store
+
+# Configuración local
+.env
+instance/
+*.sqlite3
+
+# Frontend build 
+dist/
+node_modules/
+
+static/data/argentina_provincias/shapefileprovincia/
+static/data/islas_malvinas/islas_malvinas/
+.vscode/

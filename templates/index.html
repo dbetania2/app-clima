@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>App del Clima</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Leaflet CSS + JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- 🌙 aplicar modo oscuro antes de que cargue el CSS -->
+    <script type="module" src="{{ url_for('static', filename='js/bootTheme.js') }}"></script>
+
+
+  </head>
+
+  <body>
+    <main class="app">
+      <!-- Panel izquierdo -->
+       <!-- Mapa interactivo -->
+      <div id="map" class="map-box"></div>
+      
+      <div class="panel left">
+        <button id="toggleDark" class="mode-toggle" aria-label="Alternar modo claro/oscuro" title="Alternar modo claro/oscuro">🌙</button>
+        <button id="resetAppBtn" class="reset-button" title="Volver a la vista inicial">
+        « </button>
+        <h1>App del Clima</h1>
+
+        <div id="welcomeSection">
+          <h1>Bienvenido</h1>
+          <p>Esta es mi app del clima que te permite conocer el tiempo actual y el pronóstico semanal de cualquier ciudad. 🌦️</p>
+        </div>
+
+        <label for="cityInput" class="sr-only">Ciudad</label>
+        <input type="text" id="cityInput" placeholder="Ingresa una ciudad" aria-label="Ciudad" />
+        <button id="getWeatherBtn">Obtener Clima</button>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <div id="weatherResult" class="hidden">
+          <h2 id="cityName"></h2>
+
+          <div class="current-weather">
+            <img id="currentIcon" src="" alt="Icono del clima actual" />
+            <div>
+              <p>Temperatura: <span id="currentTemp"></span> °C</p>
+              <p>Descripción: <span id="currentDescription"></span></p>
+            </div>
+          </div>
+          <!--Contenedor para el desplegable de ciudades -->
+          <div id="cityDropdownContainer" class="hidden">
+            <label for="citySelector">Otras ciudades en <span id="selectedProvinceName"></span>:</label>
+            <select id="citySelector"></select>
+          </div>
+          <h3>Pronóstico Semanal</h3>
+          <div id="weeklyForecast" class="weekly-forecast"></div>
+        </div>
+      </div>
+
+      <!-- Panel derecho -->
+      <aside class="panel right hidden" id="dashboardPanel">
+        <h2>Dashboard</h2>
+
+        
+
+        <div class="chart-container">
+          <h3>Temperaturas Máx / Mín</h3>
+          <canvas id="chartTempRange"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h3>Volumen de lluvia (mm)</h3>
+          <canvas id="chartRain"></canvas>
+        </div>
+
+        <div class="chart-container">
+          <h3>Resumen de Condiciones Climáticas</h3>
+          <canvas id="chartSummary"></canvas>
+        </div>
+      </aside>
+    </main>
+
+    <!-- JS principal -->
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

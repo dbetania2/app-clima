@@ -1,0 +1,270 @@
+{
+  "Buenos Aires": [
+  {"name": "La Plata", "default": true},
+  {"name": "Mar del Plata"},
+  {"name": "Bahía Blanca"},
+  {"name": "Junín"},
+  {"name": "Tandil"},
+  {"name": "Quilmes"},
+  {"name": "Lanús"},
+  {"name": "Lomas de Zamora"},
+  {"name": "Merlo"},
+  {"name": "Florencio Varela"},
+  {"name": "San Justo"},
+  {"name": "Pilar"},
+  {"name": "Escobar"},
+  {"name": "Zárate"},
+  {"name": "Campana"},
+  {"name": "Pergamino"},
+  {"name": "Olavarría"},
+  {"name": "Azul"},
+  {"name": "Necochea"},
+  {"name": "Mercedes"},
+  {"name": "Chivilcoy"},
+  {"name": "Trenque Lauquen"},
+  {"name": "Pehuajó"},
+  {"name": "Adrogué"},
+  {"name": "Avellaneda"},
+  {"name": "Berazategui"},
+  {"name": "Berisso"},
+  {"name": "Bragado"},
+  {"name": "Cañuelas"},
+  {"name": "Chascomús"},
+  {"name": "Dolores"},
+  {"name": "Ensenada"},
+  {"name": "Ezeiza"},
+  {"name": "General Rodríguez"},
+  {"name": "Hurlingham"},
+  {"name": "Ituzaingó"},
+  {"name": "José C. Paz"},
+  {"name": "La Matanza"},
+  {"name": "Lincoln"},
+  {"name": "Malvinas Argentinas"},
+  {"name": "Marcos Paz"},
+  {"name": "Moreno"},
+  {"name": "Morón"},
+  {"name": "Presidente Perón"},
+  {"name": "Ramos Mejía"},
+  {"name": "San Fernando"},
+  {"name": "San Isidro"},
+  {"name": "San Miguel"},
+  {"name": "Tigre"},
+  {"name": "Tres de Febrero"},
+  {"name": "Vicente López"},
+  {"name": "Gral. Pueyrredón"},
+  {"name": "Pinamar"},
+  {"name": "Villa Gesell"},
+  {"name": "San Clemente del Tuyú"},
+  {"name": "Santa Teresita"},
+  {"name": "Miramar"},
+  {"name": "Balcarce"},
+  {"name": "Puan"},
+  {"name": "Coronel Suárez"},
+  {"name": "Carlos Casares"},
+  {"name": "Carlos Tejedor"},
+  {"name": "Colón"},
+  {"name": "Salto"},
+  {"name": "San Nicolás de los Arroyos"},
+  {"name": "Baradero"},
+  {"name": "Arrecifes"},
+  {"name": "Ramallo"},
+  {"name": "San Pedro"},
+  {"name": "Brandsen"},
+  {"name": "Chascomús"},
+  {"name": "Las Flores"},
+  {"name": "Lobos"},
+  {"name": "Navarro"},
+  {"name": "Saladillo"},
+  {"name": "San Andrés de Giles"},
+  {"name": "Suipacha"},
+  {"name": "Veinticinco de Mayo"},
+  {"name": "Roque Pérez"},
+  {"name": "General Belgrano"},
+  {"name": "General Paz"}
+  ],
+  "CABA": [
+    {"name": "CABA", "default": true}
+  ],
+  "Catamarca": [
+    {"name": "San Fernando del Valle de Catamarca", "default": true},
+    {"name": "Belén"},
+    {"name": "Andalgalá"},
+    {"name": "Tinogasta"},
+    {"name": "Santa María"},
+    {"name": "Recreo"},
+    {"name": "Fiambalá"}
+  ],
+  "Chaco": [
+    {"name": "Resistencia", "default": true},
+    {"name": "Sáenz Peña"},
+    {"name": "Villa Ángela"},
+    {"name": "Juan José Castelli"},
+    {"name": "Presidencia Roque Sáenz Peña"},
+    {"name": "Charata"},
+    {"name": "Quitilipi"},
+    {"name": "Las Breñas"},
+    {"name": "Machagai"},
+    {"name": "General San Martín"},
+    {"name": "Coronel Du Graty"},
+    {"name": "Barranqueras"},
+    {"name": "Fontana"},
+    {"name": "Puerto Vilelas"}
+  ],
+  "Chubut": [
+    {"name": "Rawson", "default": true},
+    {"name": "Comodoro Rivadavia"},
+    {"name": "Puerto Madryn"},
+    {"name": "Trelew"},
+    {"name": "Esquel"},
+    {"name": "Sarmiento"},
+    {"name": "Rada Tilly"},
+    {"name": "Trevelin"},
+    {"name": "Lago Puelo"},
+    {"name": "Gaiman"},
+    {"name": "El Hoyo"},
+    {"name": "El Maitén"},
+    {"name": "Corcovado"},
+    {"name": "Río Mayo"},
+    {"name": "Río Pico"},
+    {"name": "Gobernador Costa"},
+    {"name": "José de San Martín"},
+    {"name": "Aldea Beleiro"},
+    {"name": "Alto Río Senguer"},
+    {"name": "Camarones"},
+    {"name": "Dolavon"},
+    {"name": "Epuyén"},
+    {"name": "Cholila"},
+    {"name": "Paso de Indios"},
+    {"name": "Tecka"},
+    {"name": "Las Plumas"},
+    {"name": "Gastre"},
+    {"name": "Gan Gan"},
+    {"name": "Telsen"},
+    {"name": "28 de Julio"},
+    {"name": "Dique Florentino Ameghino"},
+    {"name": "Puerto Pirámides"},
+    {"name": "Rada Tilly"},
+    {"name": "Bahía Bustamante"},
+    {"name": "Cerro Dragón"},
+    {"name": "Facetas"},
+    {"name": "Diadema Argentina"}
+  ],
+  "Córdoba": [
+    {"name": "Cordoba", "default": true},
+    {"name": "Río Cuarto"},
+    {"name": "Villa Carlos Paz"},
+    {"name": "San Francisco"},
+    {"name": "Villa María"},
+    {"name": "Alta Gracia"},
+    {"name": "Río Tercero"},
+    {"name": "Jesús María"},
+    {"name": "Colonia Caroya"},
+    {"name": "Villa Allende"},
+    {"name": "Cosquín"},
+    {"name": "La Falda"},
+    {"name": "Cruz del Eje"},
+    {"name": "Arroyito"},
+    {"name": "Deán Funes"},
+    {"name": "General Cabrera"},
+    {"name": "General Deheza"},
+    {"name": "Las Varillas"},
+    {"name": "Marcos Juárez"},
+    {"name": "Mina Clavero"},
+    {"name": "Bell Ville"},
+    {"name": "Hernando"},
+    {"name": "Leones"},
+    {"name": "Morrison"},
+    {"name": "La Calera"},
+    {"name": "Malagueño"},
+    {"name": "Capilla del Monte"},
+    {"name": "Embalse"},
+    {"name": "Río Ceballos"},
+    {"name": "Unquillo"}
+  ],
+  "Corrientes": [
+    {"name": "Corrientes", "default": true},
+    {"name": "Goya"},
+    {"name": "Paso de los Libres"}
+  ],
+  "Entre Rios": [
+    {"name": "Parana", "default": true},
+    {"name": "Concordia"},
+    {"name": "Gualeguaychú"}
+  ],
+  "Formosa": [
+    {"name": "Formosa", "default": true},
+    {"name": "Clorinda"}
+  ],
+  "Jujuy": [
+    {"name": "San Salvador de Jujuy", "default": true},
+    {"name": "Perico"},
+    {"name": "Palpalá"}
+  ],
+  "La Pampa": [
+    {"name": "Santa Rosa", "default": true},
+    {"name": "General Pico"}
+  ],
+  "La Rioja": [
+    {"name": "La Rioja", "default": true},
+    {"name": "Chilecito"}
+  ],
+  "Mendoza": [
+    {"name": "Mendoza", "default": true},
+    {"name": "San Rafael"},
+    {"name": "Godoy Cruz"}
+  ],
+  "Misiones": [
+    {"name": "Posadas", "default": true},
+    {"name": "Oberá"},
+    {"name": "Eldorado"}
+  ],
+  "Neuquén": [
+    {"name": "Neuquen", "default": true},
+    {"name": "San Martín de los Andes"},
+    {"name": "Villa La Angostura"}
+  ],
+  "Rio Negro": [
+    {"name": "Viedma", "default": true},
+    {"name": "Bariloche"},
+    {"name": "General Roca"}
+  ],
+  "Salta": [
+    {"name": "Salta", "default": true},
+    {"name": "Orán"},
+    {"name": "Cafayate"}
+  ],
+  "San Juan": [
+    {"name": "San Juan", "default": true},
+    {"name": "Caucete"}
+  ],
+  "San Luis": [
+    {"name": "San Luis", "default": true},
+    {"name": "Villa Mercedes"}
+  ],
+  "Santa Cruz": [
+    {"name": "Rio Gallegos", "default": true},
+    {"name": "Caleta Olivia"},
+    {"name": "El Calafate"}
+  ],
+  "Santa Fe": [
+    {"name": "Santa Fe", "default": true},
+    {"name": "Rosario"},
+    {"name": "Rafaela"}
+  ],
+  "Santiago del Estero": [
+    {"name": "Santiago del Estero", "default": true},
+    {"name": "La Banda"}
+  ],
+  "Tierra del Fuego": [
+    {"name": "Ushuaia", "default": true},
+    {"name": "Río Grande"}
+  ],
+  "Tucumán": [
+    {"name": "San Miguel de Tucumán", "default": true},
+    {"name": "Yerba Buena"},
+    {"name": "Concepción"}
+  ],
+  "Islas Malvinas": [
+    {"name": "Puerto Argentino", "default": true}
+  ]
+}
