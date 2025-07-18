@@ -1,6 +1,6 @@
 // la url base para la api.
 import { handleApiError, handleRequestError } from "../utilsjs/errorHandler.js";
-const api_base_url = 'https://app-clima-cfrn3z15t-daianas-projects-12659579.vercel.app' 
+const api_base_url = 'https://app-clima-zshg.onrender.com' 
 
 /**
  * obtiene el clima actual y el pronostico de 7 dias para una ciudad especifica
